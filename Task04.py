@@ -30,6 +30,7 @@ with open('text.txt', 'r', encoding='utf-8') as file:
 
     d = sorted(letter_count.items(), key=lambda x: (-x[1], x[0]))
  
+with open('analysis.txt', 'w', encoding='utf-8') as file:
     for letter, freq in d:
-        print(letter, freq)
+        file.write(f'{letter} {freq}'+'\n')
 
