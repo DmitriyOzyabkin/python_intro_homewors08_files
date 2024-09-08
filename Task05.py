@@ -12,4 +12,12 @@ with open('voyna-i-mir.txt', 'r', encoding='utf-8') as file:
     text = file.read()
     char_count = Counter(text)
 
+# sorted(char_count, )
+
 print(char_count)
+
+with open('VIM_letter_count.txt', 'w', encoding='utf-8') as file:
+    for key, value in sorted(char_count.items(), key=lambda item: item[1], reverse=True):
+        if key.isalpha():
+            file.write(f"'{key}' occurs  {value} times\n")
+
